@@ -1,0 +1,673 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="317f4914-2993-4038-b536-c24a1441d655" class="page sans"><header><h1 class="page-title"></h1></header><div class="page-body"><p id="83415739-04fd-4db0-988a-1b4d7be79fe4" class="">
+</p><p id="4d64f2f5-429a-416e-984f-5c0f28cc749b" class="">
+</p><p id="15b9aac4-dc47-4955-a2fc-c5ae983bf529" class="">
+</p><h1 id="74226421-7037-49e3-8f98-c992cb661ffd" class="">ILKIN MAMMADOV: User Acquisition and Growth Specialist</h1><p id="058d3616-00e0-4d66-b306-fb3b1ddc209d" class="">Email: <a href="mailto:ilkin.memmedov@gmail.com">ilkin.memmedov@gmail.com</a></p><p id="806dce7b-3ff7-45f2-83b7-87985aa9a416" class="">Address: Istanbul/ Turkey - Baku/ Azerbaijan</p><p id="163a527a-b119-4c97-8600-9c2f960fbf80" class="">GSM: +905058505142 / +994518095511</p><h2 id="f7b2cb86-623f-477d-80bc-2d611af3d932" class="">Summary</h2><p id="d9c4c04c-4f43-4d81-beec-275f40f74415" class="">I am a highly skilled User Acquisition and Growth Specialist with a passion for mobile apps, especially mobile games. With extensive experience in Facebook Business Manager, Google ACI/ACE, Firebase, Google Analytics (GA4), AppsFlyer, Adjust, AppAnnie, AppFollow, and Social Media channels, I have a proven track record of success in creating and implementing effective user acquisition strategies. I am also skilled in Excel and Google Sheets (Automated reports with App Script) and have experience with DSP &amp; Affiliate networks. I am fluent in Turkish, Russian, English, and Azerbaijan. </p><h2 id="db925d92-1710-4905-a679-4c86a6048675" class="">Professional Experience</h2><h3 id="e30d7245-8a17-4c5f-8d14-fc709744e7a0" class="">Hepsiburada - Sr. Mobile Digital Marketing Specialist</h3><p id="c1edeece-7d18-4374-8766-81463080d8e8" class="">October 2021 - Present Remote</p><ul id="c443e242-8217-4df3-97bd-3173bf2d034e" class="bulleted-list"><li style="list-style-type:disc">Developing and implementing successful user acquisition (UA) campaigns and strategies for e-commerce &quot;Hepsiburada.&quot;</li></ul><ul id="4b6ccbbb-4801-4158-9a0c-62e2606edd01" class="bulleted-list"><li style="list-style-type:disc">Utilizing App Store Optimization (ASO) techniques to improve app visibility and increase downloads.</li></ul><ul id="f1eb296d-2d33-4015-b5b9-f91456a5cbe0" class="bulleted-list"><li style="list-style-type:disc">Exploring alternative UA channels to reach new audiences.</li></ul><h3 id="6a860a12-fe3b-4987-be08-4b6795d6feb5" class="">Madduck - Digital Marketing Associate</h3><p id="3225cc0c-cb88-4879-8637-8af1902a7206" class="">February 2021 - June 2021 Istanbul</p><ul id="616b6f18-aee5-4526-bc14-62695dbe3771" class="bulleted-list"><li style="list-style-type:disc">Managed worldwide UA campaigns for business apps that generate revenue via subscription.</li></ul><ul id="f2ce1b47-d9fb-44eb-9067-31e667cf7d9d" class="bulleted-list"><li style="list-style-type:disc">Coordinated campaigns through main and affiliate networks for IOS.</li></ul><ul id="dfb98182-fe31-4db3-ab35-bc379d8fccbb" class="bulleted-list"><li style="list-style-type:disc">Managed and monitored campaigns according to Net Marketing, Subscriber, and Purchases. Reported Weekly &amp; Monthly campaigns performance.</li></ul><ul id="154287bf-dbb5-4db7-bd1e-5b70a2e63dec" class="bulleted-list"><li style="list-style-type:disc">Coordinated with the creative team for suitable artwork that matches the product and localization of creatives to deliver a high-quality advertisement to our target audience.</li></ul><h3 id="802e5da1-44f7-4e4d-868b-5fe86e7dad95" class="">Publishme Agency - User Acquisition Specialist</h3><p id="0e005cd4-bd0e-4180-9046-0dc554ec07dc" class="">October 2020 - February 2021 Istanbul</p><ul id="024b1235-a96b-42c3-ae50-eb89e9c6622a" class="bulleted-list"><li style="list-style-type:disc">Created successful user acquisition campaigns for Brawl Stars in Turkey &amp; MENA countries.</li></ul><ul id="7af864f9-df78-4dca-94fa-5d2cd5ce9796" class="bulleted-list"><li style="list-style-type:disc">Managed and monitored campaigns according to Net Yield, ROI, and Retention rate values. Reported Weekly &amp; Monthly campaigns performance.</li></ul><ul id="dfb320f3-2145-4801-8ee8-aca39e3aa5c0" class="bulleted-list"><li style="list-style-type:disc">Coordinated with the creative team for suitable artwork that matches the product and localization of creatives to deliver a high-quality advertisement to our target audience.</li></ul><ul id="32209683-bea9-49ba-856a-9df396f2ee9a" class="bulleted-list"><li style="list-style-type:disc">Prepared a paid marketing plan and user acquisition proposal for clients.</li></ul><h3 id="3e9a0f67-a851-4290-86ae-8f3998bc3634" class="">Lokum Games (InGame Group) - User Acquisition Specialist</h3><p id="34a87e1e-071a-4800-8448-45083f4d35b9" class="">May 2019 - September 2020 Istanbul</p><ul id="d3b3a747-2de5-429a-a0ea-8a6ca2135a5d" class="bulleted-list"><li style="list-style-type:disc">Created and managed UA campaigns for Elite Games (Pool games) in Turkey &amp; Tier1 countries.</li></ul><ul id="88c02e20-f79a-4cb2-a949-f5a9d3795c99" class="bulleted-list"><li style="list-style-type:disc">Managed campaigns through Facebook Business &amp; Google Ads &amp; TikTok &amp; AdColony for IOS and Android.</li></ul><ul id="ee386b40-7fbf-48e3-b880-769379d9038a" class="bulleted-list"><li style="list-style-type:disc">Coordinated with the creative team for suitable artwork that matches the product and localization of creatives to deliver a high-quality advertisement to our target audience.</li></ul><ul id="137253a3-7f17-462b-bd59-af727aea73dd" class="bulleted-list"><li style="list-style-type:disc">Prepared a marketing plan and assets for the global soft launch.</li></ul><h3 id="9a176972-bdc4-47ff-9435-3da50cb2a8e7" class="">Wolves Interactive - Digital Marketing Specialist</h3><p id="685a23a9-0fd9-4f1f-841a-fe42cdb3a162" class="">December 2018 - May 2019 Istanbul</p><ul id="f7a4fe74-95e7-4dfc-9cb5-d74370bb506c" class="bulleted-list"><li style="list-style-type:disc">Managed and marketed games through Facebook Business and Google Ads for IOS and Android.</li></ul><ul id="944351db-f3ef-4818-a34a-419dadfc440b" class="bulleted-list"><li style="list-style-type:disc">Coordinated with the creative team for suitable artwork that matches our game to deliver high-quality creative assets to our target audience.</li></ul><ul id="1654b380-9171-4d86-a991-f061a0579a1c" class="bulleted-list"><li style="list-style-type:disc">Brainstormed with the marketing team for the best strategy regarding (target audience, prices, best platform, demographics, behavior, and interests).</li></ul><h3 id="d25e9fe5-5a99-4d41-b1a5-7579e4f71e12" class="">Bamgaga - Social Media Specialist</h3><p id="a7324fb0-d6c9-476b-991d-65a6375156d3" class="">January 2016- December 2018 Istanbul</p><ul id="3d5b915e-80ee-49df-92cc-04fdeff311c4" class="bulleted-list"><li style="list-style-type:disc">Managed and marketed e-commerce website (<a href="http://www.bamgaga.com/">www.bamgaga.com</a>)</li></ul><ul id="3b1fef6a-3e02-4d17-880b-18ea7df1b5ab" class="bulleted-list"><li style="list-style-type:disc">Social Media Marketing (Facebook Business Manager)</li></ul><ul id="85142740-5c30-4e76-a8f9-067e52f66562" class="bulleted-list"><li style="list-style-type:disc">Content creation (artwork) for social media accounts using Adobe design tools</li></ul><h2 id="6ef87447-e134-4278-a77d-f07374d93b17" class="">Education</h2><p id="c63f91e1-f870-43dd-8170-d2f1a97ceb28" class="">2019 - T.C. Uskudar University, Institute of Social Sciences, Neuromarketing graduate program, M.A</p><p id="56da1910-b1a9-4548-9280-22a47ac995f3" class="">2014 - 2018: T.C. Istanbul University, Faculty of Communication, Department of Public Relations and Publicity</p><p id="3ac8cde7-59a8-41b1-a5b5-8ad767b71052" class="">2006 - 2014: T.C. Istanbul University, English Language Teaching Department</p><h2 id="e00c5902-3b11-41f5-aed2-add805981bb5" class="">Skills</h2><ul id="0a88e02f-3dcc-4b6a-a10b-31fe10f8ff07" class="bulleted-list"><li style="list-style-type:disc">Proficient in Facebook Business Manager, Google ACI/ACE, Firebase, Google Analytics (GA4), AppsFlyer, Adjust, AppAnnie, AppFollow, and social media channels for user acquisition and growth.</li></ul><ul id="4ada67fa-cfe3-457b-807d-9d5dc01368c7" class="bulleted-list"><li style="list-style-type:disc">Skilled in estimation/prediction analysis for monthly plans, helping to optimize budgets.</li></ul><ul id="2763f17b-fce1-4217-b6c0-4021e392aa43" class="bulleted-list"><li style="list-style-type:disc">Experienced in DSP and affiliate networks, which can lead to cost-effective campaigns.</li></ul><ul id="a9e6cb5f-a084-46f9-a0d7-c13389a88b43" class="bulleted-list"><li style="list-style-type:disc">Proficient in Excel and Google Sheets, including the creation of automated reports with App Script, which can improve data analysis and reporting.</li></ul><ul id="31e3db46-d275-42ae-9180-37fca3b06a4f" class="bulleted-list"><li style="list-style-type:disc">Beginner in Python for data visualization, demonstrating a willingness to learn and expand technical skills.</li></ul><ul id="736820dc-e0ac-42ba-b09a-ede4b7ce4fdf" class="bulleted-list"><li style="list-style-type:disc">Learning SQL for creating effective dashboards in Look ML BI tool, highlighting a commitment to improving data analysis and reporting.</li></ul><ul id="5a7b1f23-e64c-431d-91dd-3de1f4c97256" class="bulleted-list"><li style="list-style-type:disc">Fluent in Turkish, Russian, English, and Azerbaijani (native), facilitating communication with diverse teams and clients.</li></ul><h2 id="c7a42fad-38ff-4f61-92ae-efaabce480a1" class="">Courses / Certificates</h2><ul id="f0841b55-4883-4bef-b5c8-4b3fa7f4c699" class="bulleted-list"><li style="list-style-type:disc">Apple Search Ads Certification - Apple (October 2020)</li></ul><ul id="90cdffb2-ac4e-40e9-a3bf-6c1aef4ec2b3" class="bulleted-list"><li style="list-style-type:disc">Introduction to Machine Learning - Global AI Hub / AI Business School (September 2020)</li></ul><ul id="1c52c3af-44b8-4082-958e-f7ec2d461302" class="bulleted-list"><li style="list-style-type:disc">From A to Z Professional Digital Marketing Course (Online - Burak Arslan (Gittigidiyor Digital Marketing Head)) (April 2019)</li></ul><ul id="b1cbdb81-4497-45b0-9f68-b94b65f3ca1d" class="bulleted-list"><li style="list-style-type:disc">Computer-Based Advertising and Design – ISMEK (October 2014 - May 2015)</li></ul><ul id="62bdfa30-c06a-4945-aa31-c5a4209e032a" class="bulleted-list"><li style="list-style-type:disc">Web Design – ISMEK (October 2013- May 2014)</li></ul><ul id="ff99c141-0589-4777-9798-c5bd3482b5ae" class="bulleted-list"><li style="list-style-type:disc">Adobe Photoshop – Private Lesson (May 2012- August 2012)</li></ul><h2 id="067a751c-0703-43f3-b812-97b5fbf97511" class="">Hobbies</h2><p id="35b68963-9487-456a-9f74-11bb3431549f" class="">Cycling, Wood Carving, Camping &amp; Hiking, Hitchhiking</p><h2 id="f838cc6d-dafb-4ec3-be84-25d860caa6ee" class="">References</h2><p id="a14ddb89-0bc3-4121-9991-5144cfd0a933" class="">Available upon request.</p><p id="0d46040d-1387-4b07-b060-746c1562185c" class="">
+</p></div></article></body></html>
